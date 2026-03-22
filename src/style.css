@@ -1,0 +1,72 @@
+:root {
+  /* Primary */
+  --color-beaver: #9e7f66;
+  --color-cod-gray: #111111;
+
+  /* Secondary */
+  --color-mirage: #17192b;
+  --color-ebony-clay: #242b37;
+  --color-shuttle-gray: #5c6779;
+}
+
+body {
+  background-color: floralwhite;
+}
+
+header {
+  padding: 32px 64px;
+  position: absolute;
+  text-align: center;
+  color: white;
+  width: 100%;
+  padding-top: 60vw;
+}
+
+section {
+  padding: 64px;
+  text-align: center;
+  h1,
+  h2,
+  p {
+    padding-bottom: 32px;
+  }
+
+  &:nth-child(2):not(.menu-container) {
+    margin-top: -8rem;
+  }
+}
+
+.hero.home {
+  padding-top: 55vw;
+  background-image: url("./img/hero-bg-mobile@2x.jpg");
+  @media (min-width: 48rem) {
+    background-image: url("./img/hero-bg-tablet@2x.jpg");
+  }
+  @media (min-width: 61rem) {
+    background-image: url("./img/hero-bg-desktop@2x.jpg");
+  }
+}
+
+.hero.alt {
+  background-image: url("./img/hero-bg-alt-mobile@2x.jpg");
+  @media (min-width: 48rem) {
+    background-image: url("./img/hero-bg-alt-tablet@2x.jpg");
+  }
+  @media (min-width: 61rem) {
+    background-image: url("./img/hero-bg-alt-desktop@2x.jpg");
+  }
+}
+
+.hero {
+  padding-bottom: 10rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+footer {
+  padding: 32px 64px;
+  text-align: center;
+  background-color: var(--color-cod-gray);
+  color: white;
+}
