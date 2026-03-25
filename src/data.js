@@ -40,14 +40,6 @@ export const menu = [
     price: 22,
   },
   {
-    id: "orcan-S4_DYDMGouc",
-    name: "Forest Berry Brioche Toast",
-    course: "breakfast",
-    description:
-      "Brioche French toast caramelized to a golden hue, adorned with a selection of forest berries, fresh mint, and pure maple reduction.",
-    price: 20,
-  },
-  {
     id: "orcan-tLGAOnl4p28",
     name: "Reserve Ribeye au Poivre",
     course: "main course",
@@ -80,3 +72,36 @@ export const menu = [
     price: 14,
   },
 ];
+
+export const headerCopy = {
+  home: {
+    heading: "Exquisite dining since 1989",
+    paragraph:
+      "Experience our seasonal menu in beautiful country surroundings. Eat the freshest produce from the comfort of our farmhouse.",
+  },
+  menu: {
+    heading: "A few highlights from our menu",
+    paragraph:
+      "We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites. Our menu is revamped every season.",
+  },
+  book: {
+    heading: "Reservations",
+    paragraph:
+      "We can’t wait to host you. If you have any special requirements please feel free to call on the phone number below. We’ll be happy to accommodate you.",
+  },
+};
+
+export const bodyCopy = {
+  home: [
+    {
+      heading: "The most locally sourced food",
+      paragraph:
+        "All our ingredients come directly from our farm or local fishery. So you can be sure that you’re eating the freshest, most sustainable food.",
+    },
+    {
+      heading: "Enjoyable place for all the family",
+      paragraph:
+        " Our relaxed surroundings make dining with us a great experience for everyone. We can even arrange a tour of the farm before your meal. ",
+    },
+  ],
+};

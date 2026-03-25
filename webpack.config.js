@@ -12,13 +12,14 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Odin Restaurant",
+      title: "oDine",
       template: "./src/template.html",
     }),
   ],
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(import.meta.dirname, "dist"),
+    clean: true,
   },
   optimization: {
     runtimeChunk: "single",

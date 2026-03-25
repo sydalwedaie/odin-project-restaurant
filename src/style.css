@@ -9,41 +9,171 @@
   --color-shuttle-gray: #5c6779;
 }
 
-body {
-  background-color: floralwhite;
+@font-face {
+  font-family: "League Spartan";
+  src: url("./assets/LeagueSpartan.ttf");
 }
 
-header {
-  padding: 32px 64px;
-  position: absolute;
-  text-align: center;
+.drop-shadow {
+  box-shadow: 0px 75px 100px -50px rgb(56 66 85 / 50%);
+}
+
+header button,
+.submit {
+  padding-block: 1.5rem;
+  min-width: 11rem;
+  background-color: transparent;
+  border: 1px solid white;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 600;
   color: white;
-  width: 100%;
-  padding-top: 60vw;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: var(--color-cod-gray);
+  }
 }
 
-section {
-  padding: 64px;
+p {
+  @media (min-width: 48rem) {
+    font-size: 1.25rem;
+  }
+}
+
+body {
+  min-width: 25rem;
+  font-family: "League Spartan";
+}
+
+section h1 {
+  font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: -0.4px;
+  padding-block: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  h1,
-  h2,
-  p {
-    padding-bottom: 32px;
+  gap: 1rem;
+
+  &::before {
+    content: url("./assets/pattern-divide.svg");
+  }
+  &::after {
+    content: url("./assets/pattern-divide.svg");
+    display: inline-block;
+    transform: scaleX(-1);
   }
 
-  &:nth-child(2):not(.menu-container) {
-    margin-top: -8rem;
+  @media (min-width: 48rem) {
+    font-size: 4rem;
+  }
+
+  @media (min-width: 61rem) {
+    font-size: 5rem;
+    padding-block: 4rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: -0.4px;
+  display: flex;
+  flex-direction: column;
+  max-width: 24rem;
+  &::before {
+    content: url("./assets/pattern-divide.svg");
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 48rem) {
+    font-size: 3rem;
+  }
+}
+
+/* Header */
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+
+  @media (min-width: 48rem) {
+    font-size: 4rem;
+  }
+  @media (min-width: 61rem) {
+    font-size: 4rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3rem 2rem;
+  @media (min-width: 61rem) {
+    padding-block: 4rem;
+  }
+}
+
+.hero .wrapper {
+  max-width: 60rem;
+  margin: auto;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: -0.4px;
+    max-width: 300px;
+
+    @media (min-width: 48rem) {
+      font-size: 3rem;
+    }
+
+    @media (min-width: 61rem) {
+      font-size: 5rem;
+      max-width: 500px;
+    }
+  }
+
+  p {
+    max-width: 29rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 61rem) {
+    align-items: flex-start;
+    text-align: left;
+    padding-inline: 0;
   }
 }
 
 .hero.home {
   padding-top: 55vw;
+  padding-bottom: 10rem;
   background-image: url("./img/hero-bg-mobile@2x.jpg");
   @media (min-width: 48rem) {
     background-image: url("./img/hero-bg-tablet@2x.jpg");
+    padding-top: 45vw;
   }
   @media (min-width: 61rem) {
     background-image: url("./img/hero-bg-desktop@2x.jpg");
+    padding-top: 4rem;
   }
 }
 
@@ -57,16 +187,181 @@ section {
   }
 }
 
-.hero {
+.hero.book {
   padding-bottom: 10rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
 }
 
+/* General Body */
+.body-container {
+  padding: 3rem 2rem 6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 6rem;
+
+  &:not(.body-menu) {
+    margin-top: -8rem;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 35rem;
+
+    @media (min-width: 61rem) {
+      flex-direction: row;
+      gap: 4rem;
+      max-width: 60rem;
+      text-align: left;
+
+      &:nth-child(even) .caption {
+        order: -1;
+        align-items: flex-end;
+        text-align: right;
+      }
+    }
+
+    > * {
+      flex: 1; /* make both splits equal size */
+    }
+  }
+
+  .caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 28rem;
+
+    @media (min-width: 61rem) {
+      align-items: flex-start;
+    }
+  }
+}
+
+.body-book {
+  @media (min-width: 61rem) {
+    max-width: 60rem;
+    align-items: flex-end;
+    margin-top: -25rem !important;
+    padding: 0 0 10rem;
+  }
+}
+
+/* Home Body */
+
+/* Menu Page */
+.course-container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* Booking page */
+form {
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .submit {
+    background-color: var(--color-cod-gray);
+    &:hover {
+      background-color: var(--color-beaver);
+    }
+  }
+}
+
+input {
+  font-size: 1rem;
+  outline-color: var(--color-cod-gray);
+  border: none;
+  border-bottom: 1px solid var(--color-beaver);
+  padding: 1rem 0.5rem;
+  width: 100%;
+
+  &#name {
+    margin-bottom: 2rem;
+  }
+
+  &:focus {
+    border-bottom: 1px solid var(--color-cod-gray);
+  }
+}
+
+label {
+  text-align: left;
+  display: block;
+}
+
+.book-number {
+  color: var(--color-cod-gray);
+  border-bottom: 1px solid var(--color-beaver);
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+
+  button {
+    border: none;
+    background-color: transparent;
+    padding: 1rem;
+  }
+
+  img {
+    width: 1rem;
+  }
+
+  .dec {
+    order: -1;
+  }
+}
+
+/* Footer */
+
 footer {
-  padding: 32px 64px;
+  padding: 4rem 2rem;
   text-align: center;
   background-color: var(--color-cod-gray);
   color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h2,
+  h3,
+  p {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 2px;
+    line-height: 2;
+  }
+
+  .restaurant-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 61rem) {
+      flex-direction: row;
+      gap: 6rem;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
+
+  @media (min-width: 61rem) {
+    padding-block: 6rem;
+  }
 }

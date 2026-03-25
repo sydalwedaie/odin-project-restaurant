@@ -5,7 +5,10 @@ import "./template.html";
 import { menu } from "./data.js";
 import renderHomePage from "./home.js";
 import renderMenuPage from "./menu.js";
-import renderBookPage from "./book.js";
+import renderBookPage, {
+  handleNumPeopleClick,
+  handleSubmitClick,
+} from "./book.js";
 
 const contentEl = document.querySelector("#content");
 contentEl.innerHTML = renderHomePage();
@@ -15,9 +18,12 @@ document.addEventListener("click", (e) => {
   if (target === "btn-home") {
     contentEl.innerHTML = renderHomePage();
   } else if (target === "btn-menu") {
-    const menuHtml = renderMenuPage(menu);
-    contentEl.innerHTML = menuHtml;
+    contentEl.innerHTML = renderMenuPage(menu);
   } else if (target === "btn-book") {
     contentEl.innerHTML = renderBookPage();
+    handleNumPeopleClick();
+    handleSubmitClick();
+  } else {
+    return;
   }
 });

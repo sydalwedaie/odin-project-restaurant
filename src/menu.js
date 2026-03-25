@@ -1,3 +1,6 @@
+import { renderHeader } from "./components.js";
+import { headerCopy } from "./data.js";
+
 const context = import.meta.webpackContext("./img");
 const html = String.raw;
 
@@ -6,18 +9,22 @@ function generateSubMenuHtml(subMenu) {
     .map((item) => {
       const imgPath = `./${item.id}.jpg`;
       return html`
-        <div class="menu-item">
-          <img src="${context(imgPath)}" />
-          <h2>${item.name}</h2>
-          <h3>$${item.price}</h3>
-          <p>${item.description}</p>
-        </div>
+        <article class="item-container">
+          <picture>
+            <img src="${context(imgPath)}" class="drop-shadow" />
+          </picture>
+          <div class="caption">
+            <h2>${item.name}</h2>
+            <p>${item.description}</p>
+            <h3>$${item.price}</h3>
+          </div>
+        </article>
       `;
     })
     .join("");
 }
 
-export default function renderMenuPage(menu) {
+function generateMenuHtml(menu) {
   // Get all available course types
   const courses = [];
   menu.forEach((item) => {
@@ -25,30 +32,24 @@ export default function renderMenuPage(menu) {
   });
 
   // Create categorized menu html
-  const menuHtml = courses
+  return courses
     .map((course) => {
       const subMenu = menu.filter((item) => item.course === course);
       return html`
-        <h1>${course}</h1>
-        ${generateSubMenuHtml(subMenu)}
+        <section class="course-container">
+          <h1>${course}</h1>
+          <div>${generateSubMenuHtml(subMenu)}</div>
+        </section>
       `;
     })
     .join("");
+}
 
+export default function renderMenuPage(menu) {
   return html`
-    <section class="hero alt menu">
-      <div class="logo">Odin Restaurant</div>
-      <h1>A few highlights from our menu</h1>
-      <p>
-        We cater for all dietary requirements, but here’s a glimpse at some of
-        our diner’s favourites. Our menu is revamped every season.
-      </p>
-
-      <nav>
-        <button class="btn-home">Home</button>
-        <button class="btn-book">Book</button>
-      </nav>
+    ${renderHeader("menu", headerCopy.menu)}
+    <section class="body-container body-menu">
+      ${generateMenuHtml(menu)}
     </section>
-    <section class="menu-container">${menuHtml}</section>
   `;
 }
