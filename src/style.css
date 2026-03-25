@@ -33,6 +33,9 @@ header button,
   font-weight: 600;
   color: white;
 
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   &:hover {
     background-color: white;
     color: var(--color-cod-gray);
@@ -346,6 +349,7 @@ footer {
   color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 
   h2,
@@ -355,6 +359,23 @@ footer {
     font-size: 0.875rem;
     letter-spacing: 2px;
     line-height: 2;
+  }
+
+  .info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 65rem;
+    @media (min-width: 48rem) {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+      gap: 4rem;
+    }
+
+    @media (min-width: 61rem) {
+      gap: 6rem;
+    }
   }
 
   .restaurant-info {
@@ -368,13 +389,16 @@ footer {
     }
   }
 
-  @media (min-width: 48rem) {
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: left;
-  }
-
   @media (min-width: 61rem) {
     padding-block: 6rem;
+    .logo {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.attribution {
+  a {
+    color: var(--color-beaver);
   }
 }
