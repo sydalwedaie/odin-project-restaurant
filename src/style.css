@@ -32,10 +32,7 @@ header button,
   letter-spacing: 2.5px;
   font-weight: 600;
   color: white;
-
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  text-align: center;
   &:hover {
     background-color: white;
     color: var(--color-cod-gray);
