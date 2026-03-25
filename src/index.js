@@ -11,10 +11,8 @@ import renderBookPage, {
   handleSubmitClick,
 } from "./book.js";
 
-const metaEl = document.createElement("meta");
-metaEl.property = "og:image";
+const metaEl = document.querySelector("meta[name='og:image']");
 metaEl.content = ogImage;
-document.head.appendChild(metaEl);
 
 const contentEl = document.querySelector("#content");
 contentEl.innerHTML = renderHomePage();
