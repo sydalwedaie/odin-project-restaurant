@@ -2,6 +2,7 @@ import "./modern-normalize.css";
 import "./reset.css";
 import "./style.css";
 import "./template.html";
+import ogImage from "./assets/og-image.jpg";
 import { menu } from "./data.js";
 import renderHomePage from "./home.js";
 import renderMenuPage from "./menu.js";
@@ -9,6 +10,11 @@ import renderBookPage, {
   handleNumPeopleClick,
   handleSubmitClick,
 } from "./book.js";
+
+const metaEl = document.createElement("meta");
+metaEl.name = "og:image";
+metaEl.content = ogImage;
+document.head.appendChild(metaEl);
 
 const contentEl = document.querySelector("#content");
 contentEl.innerHTML = renderHomePage();
