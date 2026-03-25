@@ -16,7 +16,6 @@ function generateSubMenuHtml(subMenu) {
           <div class="caption">
             <h2>${item.name}</h2>
             <p>${item.description}</p>
-            <h3>$${item.price}</h3>
           </div>
         </article>
       `;
@@ -37,7 +36,7 @@ function generateMenuHtml(menu) {
       const subMenu = menu.filter((item) => item.course === course);
       return html`
         <section class="course-container">
-          <h1>${course}</h1>
+          <h1>${course}s</h1>
           <div>${generateSubMenuHtml(subMenu)}</div>
         </section>
       `;

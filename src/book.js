@@ -40,8 +40,8 @@ export function handleSubmitClick() {
     formEl.style.width = formEl.clientWidth + "px";
     setTimeout(() => {
       formEl.innerHTML = `
-      <p>We received your request.</p>
-      <p>Thank you</p>
+      <p>We received your request. Please check your email confirmation.</p>
+      <p>Thank you.</p>
     `;
     }, 500);
   });
