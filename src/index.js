@@ -12,7 +12,7 @@ import renderBookPage, {
 } from "./book.js";
 
 const metaEl = document.createElement("meta");
-metaEl.name = "og:image";
+metaEl.property = "og:image";
 metaEl.content = ogImage;
 document.head.appendChild(metaEl);
 
