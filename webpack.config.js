@@ -17,13 +17,7 @@ export default {
       template: "./src/template.html",
     }),
     new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "public",
-          to: "",
-          noErrorOnMissing: true,
-        },
-      ],
+      patterns: [{ from: "public", to: "" }],
     }),
   ],
   output: {
