@@ -1,5 +1,6 @@
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
 export default {
   entry: {
@@ -14,6 +15,15 @@ export default {
     new HtmlWebpackPlugin({
       title: "oDine",
       template: "./src/template.html",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "public",
+          to: "",
+          noErrorOnMissing: true,
+        },
+      ],
     }),
   ],
   output: {

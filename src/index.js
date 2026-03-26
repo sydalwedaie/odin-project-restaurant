@@ -2,7 +2,6 @@ import "./modern-normalize.css";
 import "./reset.css";
 import "./style.css";
 import "./template.html";
-import ogImage from "./assets/og-image.jpg";
 import { menu } from "./data.js";
 import renderHomePage from "./home.js";
 import renderMenuPage from "./menu.js";
