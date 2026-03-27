@@ -11,7 +11,7 @@ function generateSubMenuHtml(subMenu) {
       return html`
         <article class="item-container">
           <picture>
-            <img src="${context(imgPath)}" class="drop-shadow" />
+            <img src="${context(imgPath)}" class="drop-shadow" loading="lazy" />
           </picture>
           <div class="caption">
             <h2>${item.name}</h2>
